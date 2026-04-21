@@ -1,0 +1,33 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <!-- Output a Windows executable -->
+    <OutputType>WinExe</OutputType>
+
+    <!-- Target .NET 6 for Windows Forms -->
+    <TargetFramework>net6.0-windows</TargetFramework>
+
+    <!-- Enable Windows Forms -->
+    <UseWindowsForms>true</UseWindowsForms>
+
+    <!-- Enable implicit usings for common namespaces -->
+    <ImplicitUsings>enable</ImplicitUsings>
+
+    <!-- Enable nullable reference types -->
+    <Nullable>enable</Nullable>
+
+    <!-- Ensure the app starts from Program.Main -->
+    <StartupObject>MCPMS.Program</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- MySQL package -->
+    <PackageReference Include="MySql.Data" Version="8.1.1" />
+
+    <!-- SQLClient required by DataVisualization (fixes FileNotFoundException) -->
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+
+    <!-- WinForms Charting for .NET 6+ -->
+    <PackageReference Include="System.Windows.Forms.DataVisualization" Version="1.0.0-prerelease.20110.1" />
+  </ItemGroup>
+
+</Project>
